@@ -71,8 +71,8 @@ class CoursesController extends Controller
                 $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $extension = $request->file('cover_image')->getClientOriginalExtension();
-                $filenameToStore = $filename.'_'.time().'.'.$extension;
-                $path = $request->file('cover_image')->storeAs('public/cover_images', $filenameToStore);
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
             } else {
                 $fileNameToStore = 'noImage.jpg';
             }
